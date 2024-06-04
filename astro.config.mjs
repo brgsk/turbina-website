@@ -1,4 +1,8 @@
 import { defineConfig } from 'astro/config';
-
-// https://astro.build/config
-export default defineConfig({});
+import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+export default defineConfig({
+  site: 'https://lexingtonthemes.com',
+  compressHTML: true,
+  integrations: [tailwind(), sitemap()]
+});

@@ -1,0 +1,56 @@
+---
+// Define testimonials/opinions data
+const humanOpinions = [
+  {
+    name: "Roald Amundsen",
+    role: "Founder of Norway",
+    opinion:
+      "I've been fucking with them cats for many years. Great lads and gals. No cap.",
+  },
+  {
+    name: "Donald Jr Trump",
+    role: "Former and Future President of United States of America",
+    opinion:
+      "Let me tell you, folks, TURBINA STV is absolutely fantastic. Believe me, nobody does events like they do. They organize the best music festivals, the most incredible drag queen shows, and everything art-related in Stavanger, Norway. It's huge, just huge. People are talking about it all over the place. Their music festivals? Unbelievable. They bring in the best local and international artists. Everyone's saying it's the best music they've ever heard. And the drag queen shows? Tremendous. So much talent, so much creativity. It's really something special. And the venues, folks, the venues are top-notch. They find the most unique places in Stavanger. It's like nothing you've ever seen before. TURBINA STV is making Stavanger great again, one event at a time. Trust me, you don't want to miss it. It's going to be yuge!",
+  },
+  {
+    name: "Adam Sierakowski",
+    role: "Computational Linguist and Poliglot",
+    opinion:
+      "AAaaaaaAAAAaaaaAAAAAAAAAaaaaaaaAA. OooeOAąęAAEAAAAaaa. AAAAAAA. AAoAAAaaaaaa. Aaaa. AAaaaaaAAAAaaaaAAAAAAAAAaaaaaaaAA.",
+  },
+  {
+    name: "Mike",
+    role: "from r/nsfw_gifs",
+    opinion:
+      "I have had the absolute pleasure of working with Bartosz Jackowski from TURBINA STV in the past when researching the video content for my gif content. Bartosz’s knowledge and attention to detail is second to none, and he really understands industry.",
+  },
+];
+---
+
+<section class="bg-primary">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+    <div class="mt-6 space-y-2">
+      <div class="h-0.5 bg-secondary"></div>
+      <h3 class="text-secondary text-base font-medium">
+        <span>human</span>
+        <span class="font-bold">opinions</span>
+      </h3>
+      <div class="h-1.5 bg-secondary"></div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 pt-2 mt-2">
+      {
+        humanOpinions.map((opinion) => (
+         <div>
+            <p class="italic text-2xl block font-bold">
+              {opinion.name} {opinion.role}
+            </p>
+            <p class="text-sm leading-relaxed mt-6">
+              {opinion.opinion}
+            </p>
+         </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

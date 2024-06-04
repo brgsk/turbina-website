@@ -1,0 +1,87 @@
+---
+// Define the array of projects directly in the frontmatter script.
+const otherprojects = [
+  {
+    "url": "https://www.instagram.com/p/C7jMldfsVIE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "title": "Rethe DJ set",
+    "description": "Rethe is a versatile DJ, producer, and live performer known for his hypnotic grooves that blend lo-fi and hi-fi sounds. Co-founder of the music collective Calosc, Rethe has been captivating audiences since 2016 with his unique style and innovative approach to electronic music. His tracks and releases are available on platforms like Beatport and SoundCloud, where he continues to push the boundaries of his craft"
+  },
+  {
+    "url": "https://www.donaldjtrump.com",
+    "title": "Mini PEACE",
+    "description": "The Mini PEACE Festival is an annual event held in Trondheim, Norway that celebrates the ideals of peace, freedom, and women's rights through music, art, and dialogue. The festival features concerts, exhibitions, workshops, and other cultural programs that highlight the perspectives and experiences of women in conflict zones and peace-building efforts."
+  },
+  {
+    "url": "https://www.reddit.com/r/Stavanger/comments/15z3dfi/techno_in_stavanger/",
+    "title": "Techno in Stavanger",
+    "description": "Cementen is the place to be, sometimes Loft as well, they have something called techno Thursdays. But definitely Cementen on the weekends."
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "title": "+18 ONLY",
+    "description": "This is a private event. Please do not share the link with anyone under the age of 18. If you are under 18, please leave the page immediately. Thank you for your understanding."
+  }
+  // Add more projects as needed...
+];
+
+// Function to calculate `data-aos-duration` based on index
+function calculateAosDuration(index) {
+  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
+}
+---
+
+<section class="bg-primary">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-32">
+    <div class="space-y-2">
+      <!-- Section Title and Decorative Elements -->
+      <div
+        class="h-0.5 bg-secondary"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+      </div>
+      <h3
+        class="text-secondary text-base font-medium"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
+        <span>Main</span>
+        <span class="font-bold">projects</span>
+      </h3>
+    </div>
+
+    <ul
+      class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
+      role="list"
+    >
+      {
+        otherprojects.map((project, index) => (
+          <li
+            class="flow-root h-full"
+            data-aos="fade-up"
+            data-aos-duration={calculateAosDuration(index)}
+          >
+            <a href={project.url}>
+              <div class="h-full flex flex-col justify-between">
+                <div>
+                  <p class="group-hover:text-secondary/70 text-secondary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
+                    0{index + 1}.
+                  </p>
+                  <p class="italic shrink-0">{project.title}</p>
+                  <p class="text-base mt-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                <div>
+                  <p class="mt-3 text-base font-semibold">
+                    Learn more &nbsp; ↗
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
